@@ -1,1 +1,1 @@
-# Max-spacing 569JNRXZghiklmsclustering from Kruskal's Algorithm
+# Max-spacing $K$-clustering using Kruskal's Algorithm
