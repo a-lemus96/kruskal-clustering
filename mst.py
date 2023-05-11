@@ -56,5 +56,4 @@ def kruskal_modified(G, k=2):
         if added:
             T.append(e) # add edge to MST solution
             roots[rm_idx] = False # remove node from root nodes
-    print(sum(roots))
     return T

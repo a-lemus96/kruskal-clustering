@@ -1,3 +1,6 @@
+# stdlib modules
+import argparse
+
 # 3rd-party modules
 import networkx as nx
 import numpy as np
@@ -5,6 +8,12 @@ import matplotlib.pyplot as plt
 
 # custom modules
 import mst
+
+# create argument parser and add arguments to it
+parser = argparse.ArgumentParser(description='Max-spacing k-clustering')
+parser.add_argument('k', type=int, default=2, help='number of desired groups')
+# parse arguments
+args = parser.parse_args()
 
 # load data points from .txt file
 points = [] # to hold coordinate pairs and apply post processing
@@ -18,6 +27,9 @@ with open('data.txt', 'r') as f:
         att.append({'x': float(x), 'y': float(y)})
 
 points = np.array(points) # cast to numpy array
+# plot points
+#subax1 = plt.subplot(121)
+#plt.scatter(points[:, 0], points[:, 1])
 
 # compute distances among all points
 diffs = points.reshape(n, 1, 2) - points.reshape(1, n, 2)
@@ -36,8 +48,11 @@ G.add_weighted_edges_from(zip(edges[:, 0], edges[:, 1], dists)) # add edges
 G.remove_edges_from(nx.selfloop_edges(G)) # remove self-loops
 
 # compute K-clustering
-mst.kruskal_modified(G)
-# plot points
-#fig, ax = plt.subplots()
+t = mst.kruskal_modified(G, args.k)
+T = nx.Graph(t)
+for component in nx.connected_components(T):
+    # select points
+    p = points[list(component)]
+    plt.scatter(p[:, 0], p[:, 1])
 #ax.scatter(points[:, 0], points[:, 1])
-#ax.savefig("plot.png")
+plt.show()
