@@ -8,10 +8,17 @@ The script computes the distances between all possible pairs of nodes and builds
 
 ### Running the script
 ---
-The script 
+Simply run `python clusterin.py k` where `k` represents a positive integer value that denotes the number of desired groups or connected components. Here are the outputs for `k=2`, `k=3` and `k=4`
+
+### $k=2$
+---
 
 ![k2](https://github.com/a-lemus96/kruskal-clustering/assets/95151624/11e26e4a-c9fa-4804-986d-e67d86f33784)
 
+### $k=3$
+---
 ![k3](https://github.com/a-lemus96/kruskal-clustering/assets/95151624/95a94143-8dd8-4d5a-bfc9-b1858c3bb246)
 
+### $k=4$
+---
 ![k4](https://github.com/a-lemus96/kruskal-clustering/assets/95151624/dc4947b0-1356-4e95-88b6-6bf93d43878c)
