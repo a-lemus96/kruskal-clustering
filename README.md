@@ -1,8 +1,10 @@
 # Max-spacing $k$-clustering using Kruskal's Algorithm
 
-This repository contains an implementation of the Kruskal's algorithm for solving the max-spacing $k$-clustering problem. Cycle detection within Kruskal's algorithm is implemented by using the weighted quick-union algorithm, which has been shown to run in $O(\log_2 n)$. The script `clustering.py` reads the file `data.txt` which contains a set of 2-dimensional points, computes the distances between all possible pairs of nodes and builds a graph $G$ using networkX library,
+This repository contains an implementation of the Kruskal's algorithm for solving the max-spacing $k$-clustering problem. Cycle detection within Kruskal's algorithm is implemented using the weighted quick-union algorithm, which has been shown to run in $O(\log_2 n)$. The script `clustering.py` reads the file `data.txt` which contains the following set of 2-dimensional points:
 
 ![points](https://github.com/a-lemus96/kruskal-clustering/assets/95151624/7f247842-d8b8-46f9-8bd1-22bcb3f94ffb)
+
+The script computes the distances between all possible pairs of nodes and builds a weighted and connected graph $G$ using networkX library. Then it runs Kruskal's algorithm with a termination condition on the desired number of connected components $k$, which is provided by the user.
 
 ### Running the script
 ---
