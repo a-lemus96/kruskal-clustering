@@ -8,7 +8,7 @@ The script computes the distances between all possible pairs of nodes and builds
 
 ### Running the script
 ---
-Simply run `python clusterin.py k` where `k` represents a positive integer value that denotes the number of desired groups or connected components. Here are the outputs for `k=2`, `k=3` and `k=4`
+Simply run `python clustering.py k` where `k` represents a positive integer value that denotes the number of desired groups or connected components. Here are the outputs for `k=2`, `k=3` and `k=4`
 
 ### $k=2$
 ---
